@@ -21,13 +21,16 @@
 .row-poster {
   object-fit: contain;
   width: auto;
-  height: 100px;
+  height: 140px;
   margin-right: 10px;
   transition: transform 450ms;
+  box-sizing: border-box;
 }
 
 .row-poster:hover {
   transform: scale(1.08);
+  opacity: 0.1;
+  border: 1px solid whitesmoke;
 }
 
 .row-posterLarge {
@@ -36,4 +39,69 @@
 
 .row-posterLarge:hover {
   transform: scale(1.09);
+  opacity: 0.1;
+}
+
+.row-video {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 10px auto !important;
+  box-shadow: 0px 0px 8px whitesmoke;
+  border-radius: 20px;
+  border: 1px solid darkgrey;
+}
+
+.row-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+figure {
+  position: relative;
+}
+
+figure > img {
+  position: relative;
+}
+
+/* Invisible texto */
+figcaption {
+  display: none;
+  transition: all 0.5s ease-in;
+}
+/* Visible texto */
+figure:hover > figcaption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-53%, -65%);
+  transition: all 0.5s ease-in;
+  overflow-y: hidden;
+  font-size: x-small;
+}
+
+@media screen and (max-width: 700px) {
+  .row-video {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: contain !important;
+  }
+  .row > h2 {
+    font-size: medium;
+  }
+  .row-title {
+    font-size: small;
+  }
 }
